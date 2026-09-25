@@ -17,6 +17,8 @@ python -m pytest
 
 On macOS/Linux, activate with `source .venv/bin/activate`. Activation is optional: on Windows you can use `.venv\Scripts\python.exe` in place of `python`.
 
+The repository stores pytest's cache in `artifacts/pytest-cache` and temporary test data under `artifacts/tmp`. This avoids permission conflicts with an existing system-wide pytest temp directory. Explicit `--basetemp` and `PYTEST_DEBUG_TEMPROOT` settings still take precedence; `-o cache_dir=...` overrides the cache location.
+
 The default installation needs only pytest. Optional plugin modules skip with an installation hint. A few skips and one strict expected failure are deliberate teaching examples; an unexpected pass of the QinQ example fails the suite.
 
 Install all plugin examples into the same environment:

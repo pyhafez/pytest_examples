@@ -13,6 +13,8 @@ def sandbox(pytester, monkeypatch):
     monkeypatch.setenv("PYTHONPATH", source)
     # Keep optional third-party plugins out of these focused hook contracts.
     monkeypatch.setenv("PYTEST_DISABLE_PLUGIN_AUTOLOAD", "1")
+    # Child suites may live under this repository; stop parent config discovery.
+    pytester.makeini("[pytest]")
     pytester.makeconftest('pytest_plugins = ["pytest_power.pytest_plugin"]')
     return pytester
 

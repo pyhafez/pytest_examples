@@ -32,6 +32,7 @@ plugins = [
 where = ["src"]
 
 [tool.pytest.ini_options]
+cache_dir = "artifacts/pytest-cache"
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-ra --strict-markers --strict-config"
