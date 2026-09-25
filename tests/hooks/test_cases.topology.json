@@ -1,0 +1,4 @@
+[
+  {"name": "access-pair", "ports": ["eth1", "eth2"], "vlan_id": 100, "expected_ports": ["eth1", "eth2"]},
+  {"name": "spine-leaf", "ports": ["spine", "leaf1", "leaf2"], "vlan_id": 200, "expected_ports": ["spine", "leaf1", "leaf2"]}
+]
